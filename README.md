@@ -18,7 +18,7 @@ Repositorio destinado a los avances del proyecto. Ciclo-02-2025, Transacciones C
 
 - Descargar el proyecto:
   - En .rar o zip.
-  - O Clonación: `https://github.com/Neith21/Team_TRG_e-commerce.git`
+  - O Clonación: `https://github.com/WilliamsRod19/prueba-JWT.git`
 
 ---
 
@@ -34,23 +34,12 @@ Repositorio destinado a los avances del proyecto. Ciclo-02-2025, Transacciones C
 ## PASO 3:
 
 - Ejecutar librerías comandos:
-  1. `cd backend`
+  1. `cd ToDoPruebaJWT`
   2. `pip install -r requirements.txt`
 
 ---
 
 ## PASO 4:
-
-Configuraciones generales del proyecto:
-
-- Crear una base de datos en MySQL (archivo `team_trg_ecommerce.sql`):
-  - `CREATE DATABASE team_trg_ecommerce;`
-  - `USE team_trg_ecommerce;` (¡¡¡ IMPORTANTE QUEDARSE HASTA AQUÍ !!!, no hacer los insert porque aún no se han hecho las migraciones)
-- Crear un archivo `.env` dentro de backend al mismo nivel de `.env.example` y ponerle las credenciales (seguir el ejemplo de `.env.example`)
-
----
-
-## PASO 5:
 
 - Hacer migraciones comandos (estar en el mismo nivel de backend):
   1. `python manage.py migrate`
@@ -65,19 +54,39 @@ Configuraciones generales del proyecto:
 
 ## PASO 6:
 
-- Ejecutar la información de la base de datos:
-  - archivo `team_trg_ecommerce.sql` y ejecutar todo lo que está después de `USE team_trg_ecommerce;`
-
----
-
-## PASO 7:
-
 - Correr el servidor comando (estar en el mismo nivel de backend):
-  - `python manage.py runserver 192.168.1.6:8000` (antes es necesario conocer nuestra ip)
+  - `python manage.py runserver 127.0.0.1:8000` (antes es necesario conocer nuestra ip)
 
----
+## EndPoints Para Realizacion de Pruebas
+- POST http://127.0.0.1:8000/api/token/ - Para Obtencion de Token
+Body:
+{
+  "username": "username",
+  "password": "password"
+}
 
-A partir de aquí tenemos la libertad de hacer lo que sea.
-Para volver a usar el backend es necesario activar el entorno virtual y correr el servidor.
+- GET http://127.0.0.1:8000/api/v1/todos/ - Para Listar los Datos
+Header:
+Authorization: Bearer [Token]
 
----
+- POST http://127.0.0.1:8000/api/v1/todos/ Para crear datos 
+Body:
+{
+  "title": "Aprender ingles",
+  "description": "Tarea de aprender ingles"
+}
+
+Header:
+Authorization: Bearer [Token]
+
+- PUT http://127.0.0.1:8000/api/v1/todos/ID/ Para crear datos 
+Body:
+{
+  "title": "Aprender ingles",
+  "description": "Tarea de aprender ingles"
+}
+
+Header:
+Authorization: Bearer [Token]
+
+- DELETE http://127.0.0.1:8000/api/v1/todos/ID/ Para crear datos 
