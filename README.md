@@ -59,6 +59,7 @@ Repositorio destinado a los avances del proyecto. Ciclo-02-2025, Transacciones C
 
 ## EndPoints Para Realizacion de Pruebas
 - POST http://127.0.0.1:8000/api/token/ - Para Obtencion de Token
+
 Body:
 {
   "username": "username",
@@ -66,10 +67,12 @@ Body:
 }
 
 - GET http://127.0.0.1:8000/api/v1/todos/ - Para Listar los Datos
+
 Header:
 Authorization: Bearer [Token]
 
 - POST http://127.0.0.1:8000/api/v1/todos/ Para crear datos 
+
   Body:
   {
     "title": "Aprender ingles",
@@ -80,6 +83,7 @@ Header:
 Authorization: Bearer [Token]
 
 - PUT http://127.0.0.1:8000/api/v1/todos/ID/ Para crear datos 
+
 Body:
 {
   "title": "Aprender ingles",
