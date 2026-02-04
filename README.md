@@ -70,11 +70,11 @@ Header:
 Authorization: Bearer [Token]
 
 - POST http://127.0.0.1:8000/api/v1/todos/ Para crear datos 
-Body:
-{
-  "title": "Aprender ingles",
-  "description": "Tarea de aprender ingles"
-}
+  Body:
+  {
+    "title": "Aprender ingles",
+    "description": "Tarea de aprender ingles"
+  }
 
 Header:
 Authorization: Bearer [Token]
